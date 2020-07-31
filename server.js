@@ -4,7 +4,10 @@ const mongoose = require('mongoose')
 const flash = require('connect-flash')
 const session = require('express-session')
 const passport = require('passport')
-// require('dotenv').config()
+const favicon = require('serve-favicon');
+const path = require('path')
+
+require('dotenv').config()
 
 const app = express()
 
@@ -16,13 +19,16 @@ const db = process.env.MongoURI;
 
 // Connect to Mongo
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.error(err))
+.then(() => console.log('MongoDB Connected...'))
+.catch(err => console.error(err))
 
 // 3rd Parth Middleware comes with the next method already invoked
 
 // Bodyparser
 app.use(express.urlencoded({ extended: false }))
+
+// Favicon
+app.use(favicon(path.join(__dirname, 'favicon.png')));
 
 // Express Session Middleware
 app.use(session({

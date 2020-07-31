@@ -19,7 +19,8 @@
     "express-session": "^1.17.1",
     "mongoose": "^5.9.22",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
