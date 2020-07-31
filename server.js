@@ -7,7 +7,7 @@ const passport = require('passport')
 const favicon = require('serve-favicon');
 const path = require('path')
 
-require('dotenv').config()
+// require('dotenv').config()
 
 const app = express()
 
